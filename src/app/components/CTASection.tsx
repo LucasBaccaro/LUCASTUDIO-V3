@@ -50,7 +50,7 @@ export function CTASection() {
   return (
     <section
       ref={ref}
-      className="px-6 relative overflow-hidden bg-black py-32"
+      className="px-6 relative overflow-hidden bg-black py-20"
     >
       {/* Grid background with explicit lines for Figma export - centered */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -68,10 +68,10 @@ export function CTASection() {
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="relative z-10 max-w-4xl mx-auto text-center"
+        className="relative z-10 max-w-4xl mx-auto text-center pt-10"
       >
         {/* Main heading */}
-        <h2 className="text-3xl md:text-4xl font-semibold mb-8 leading-tight">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-8 leading-[1.4]">
           ¿Listo para transformar tu proyecto en un <span className="text-primary">producto digital real?</span>
         </h2>
 
