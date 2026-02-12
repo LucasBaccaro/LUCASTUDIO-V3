@@ -1,0 +1,63 @@
+/* Custom ChatKit styles to match Luca Studio theme */
+
+/* Override ChatKit container to ensure black background */
+[data-chatkit-root] {
+  background: #000000 !important;
+}
+
+/* Ensure the main chat area has black background */
+[data-chatkit-root] > div {
+  background: #000000 !important;
+}
+
+/* Message container background */
+[data-chatkit-root] [role="log"],
+[data-chatkit-root] [role="list"] {
+  background: #000000 !important;
+}
+
+/* Scrollbar customization */
+[data-chatkit-root] ::-webkit-scrollbar {
+  width: 6px;
+}
+
+[data-chatkit-root] ::-webkit-scrollbar-track {
+  background: rgba(26, 26, 26, 0.3);
+}
+
+[data-chatkit-root] ::-webkit-scrollbar-thumb {
+  background: rgba(196, 255, 13, 0.3);
+  border-radius: 3px;
+}
+
+[data-chatkit-root] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(196, 255, 13, 0.5);
+}
+
+/* Override any white backgrounds that might appear */
+[data-chatkit-root] [style*="background: white"],
+[data-chatkit-root] [style*="background: #fff"],
+[data-chatkit-root] [style*="background-color: white"],
+[data-chatkit-root] [style*="background-color: #fff"] {
+  background: #000000 !important;
+  background-color: #000000 !important;
+}
+
+/* Ensure text is visible on black background */
+[data-chatkit-root] {
+  color: #ffffff !important;
+}
+
+/* Loading states */
+[data-chatkit-root] [aria-busy="true"],
+[data-chatkit-root] [data-loading="true"] {
+  color: #c4ff0d !important;
+}
+
+/* Error messages */
+[data-chatkit-root] [role="alert"],
+[data-chatkit-root] [data-error="true"] {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+  color: #ef4444 !important;
+}
