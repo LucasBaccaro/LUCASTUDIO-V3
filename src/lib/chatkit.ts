@@ -22,34 +22,28 @@ export async function getChatKitSessionToken(): Promise<string> {
     return existingSecret;
   }
 
-  // Get API key from environment variable
-  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-
-  if (!apiKey) {
-    console.error('VITE_OPENAI_API_KEY is not configured');
-    throw new Error('VITE_OPENAI_API_KEY is not configured');
-  }
-
-  console.log('Creating ChatKit session with workflow ID:', 'wf_698decbecb5881908a6a5b1b81fc6b6e0c4657133d979995');
+  console.log('Creating new ChatKit session via backend');
 
   try {
-    const response = await fetch('https://api.openai.com/v1/chatkit/sessions', {
+    // Call our own backend API instead of OpenAI directly
+    const apiUrl = import.meta.env.PROD
+      ? '/api/chatkit/session'  // Production: same domain
+      : 'http://localhost:3001/api/chatkit/session';  // Development: backend server
+
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'OpenAI-Beta': 'chatkit_beta=v1',
-        'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        workflow: { id: 'wf_698decbecb5881908a6a5b1b81fc6b6e0c4657133d979995' },
-        user: deviceId,
+        deviceId: deviceId,
       }),
     });
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('ChatKit session creation failed:', response.status, errorText);
-      throw new Error(`Failed to create ChatKit session: ${response.status} ${errorText}`);
+      const errorData = await response.json().catch(() => ({}));
+      console.error('ChatKit session creation failed:', response.status, errorData);
+      throw new Error(`Failed to create ChatKit session: ${response.status}`);
     }
 
     const data = await response.json();
