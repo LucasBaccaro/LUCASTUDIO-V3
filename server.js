@@ -70,7 +70,7 @@ app.get('/health', (req, res) => {
 });
 
 // Serve the React app for all other routes (SPA fallback)
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(join(__dirname, 'dist', 'index.html'));
 });
 
