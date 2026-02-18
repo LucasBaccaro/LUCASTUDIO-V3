@@ -133,7 +133,7 @@ export function Navigation() {
               className="group relative overflow-hidden flex justify-center px-6 py-3 rounded-full transition-all duration-300 hover:scale-[1.03] mt-4"
             >
               <span className="absolute inset-0 bg-primary group-hover:bg-primary/90 transition-colors duration-300"></span>
-              <span className="relative z-10 text-primary-foreground font-semibold">Contacto</span>
+              <span className="relative z-10 text-primary-foreground font-semibold text-center w-full">Contacto</span>
             </motion.a>
           </div>
         </motion.div>
