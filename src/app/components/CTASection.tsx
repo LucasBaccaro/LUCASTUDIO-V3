@@ -88,7 +88,7 @@ export function CTASection() {
           className="flex justify-center items-center"
         >
           <a
-            href="https://wa.me/5491157529494"
+            href="https://wa.me/5491157529494?text=Hola%20%F0%9F%91%8B%20Vengo%20desde%20la%20web%20y%20quiero%20m%C3%A1s%20info%20sobre%20sus%20servicios%20y%20automatizaciones%20para%20mi%20negocio."
             target="_blank"
             rel="noopener noreferrer"
             className="group relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-primary/20 hover:scale-[1.03]"

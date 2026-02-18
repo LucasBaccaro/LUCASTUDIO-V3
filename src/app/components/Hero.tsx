@@ -71,7 +71,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <a href="https://wa.me/5491157529494" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden inline-block px-8 py-4 rounded-full transition-all duration-300 hover:scale-[1.03] cursor-pointer">
+          <a href="https://wa.me/5491157529494?text=Hola%20%F0%9F%91%8B%20Vengo%20desde%20la%20web%20y%20quiero%20m%C3%A1s%20info%20sobre%20sus%20servicios%20y%20automatizaciones%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden inline-block px-8 py-4 rounded-full transition-all duration-300 hover:scale-[1.03] cursor-pointer">
             <span className="absolute inset-0 bg-primary group-hover:bg-primary/90 transition-colors duration-300"></span>
             <span className="relative z-10 text-primary-foreground font-semibold">Charlemos</span>
           </a>

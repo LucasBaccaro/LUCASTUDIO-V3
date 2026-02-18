@@ -70,7 +70,7 @@ export function Navigation() {
           <button onClick={() => scrollToSection('value')} className="text-muted-foreground hover:text-primary transition-colors duration-300 font-normal">
             Por qué elegirnos
           </button>
-          <a href="https://wa.me/5491157529494" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden inline-block px-6 py-2 rounded-full transition-all duration-300 hover:scale-[1.03]">
+          <a href="https://wa.me/5491157529494?text=Hola%20%F0%9F%91%8B%20Vengo%20desde%20la%20web%20y%20quiero%20m%C3%A1s%20info%20sobre%20sus%20servicios%20y%20automatizaciones%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden inline-block px-6 py-2 rounded-full transition-all duration-300 hover:scale-[1.03]">
             <span className="absolute inset-0 bg-primary group-hover:bg-primary/90 transition-colors duration-300"></span>
             <span className="relative z-10 text-primary-foreground font-semibold">Contacto</span>
           </a>
@@ -124,7 +124,7 @@ export function Navigation() {
               Por qué elegirnos
             </motion.button>
             <motion.a
-              href="https://wa.me/5491157529494"
+              href="https://wa.me/5491157529494?text=Hola%20%F0%9F%91%8B%20Vengo%20desde%20la%20web%20y%20quiero%20m%C3%A1s%20info%20sobre%20sus%20servicios%20y%20automatizaciones%20para%20mi%20negocio."
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, x: -20 }}
