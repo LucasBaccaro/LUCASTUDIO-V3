@@ -130,7 +130,7 @@ export function Navigation() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.25 }}
-              className="group relative overflow-hidden inline-block px-6 py-3 rounded-full transition-all duration-300 hover:scale-[1.03] mt-4"
+              className="group relative overflow-hidden flex justify-center px-6 py-3 rounded-full transition-all duration-300 hover:scale-[1.03] mt-4"
             >
               <span className="absolute inset-0 bg-primary group-hover:bg-primary/90 transition-colors duration-300"></span>
               <span className="relative z-10 text-primary-foreground font-semibold">Contacto</span>
