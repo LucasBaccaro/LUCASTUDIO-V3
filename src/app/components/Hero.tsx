@@ -71,10 +71,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <button onClick={() => scrollToSection('contact')} className="group relative overflow-hidden px-8 py-4 rounded-full transition-all duration-300 hover:scale-[1.03] cursor-pointer">
+          <a href="https://wa.me/5491157529494" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden inline-block px-8 py-4 rounded-full transition-all duration-300 hover:scale-[1.03] cursor-pointer">
             <span className="absolute inset-0 bg-primary group-hover:bg-primary/90 transition-colors duration-300"></span>
             <span className="relative z-10 text-primary-foreground font-semibold">Charlemos</span>
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

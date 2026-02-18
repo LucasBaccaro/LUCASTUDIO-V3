@@ -88,11 +88,12 @@ export function CTASection() {
           className="flex justify-center items-center"
         >
           <a
-            href="mailto:lucastudio.ba@gmail.com"
+            href="https://wa.me/5491157529494"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-primary/20 hover:scale-[1.03]"
           >
             <span className="absolute inset-0 bg-primary group-hover:bg-primary/90 transition-colors duration-300"></span>
-            <Mail className="relative z-10 w-5 h-5 text-primary-foreground" />
             <span className="relative z-10 text-primary-foreground font-semibold">Contactanos</span>
           </a>
         </motion.div>

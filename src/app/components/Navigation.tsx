@@ -70,10 +70,10 @@ export function Navigation() {
           <button onClick={() => scrollToSection('value')} className="text-muted-foreground hover:text-primary transition-colors duration-300 font-normal">
             Por qué elegirnos
           </button>
-          <button onClick={() => scrollToSection('contact')} className="group relative overflow-hidden px-6 py-2 rounded-full transition-all duration-300 hover:scale-[1.03]">
+          <a href="https://wa.me/5491157529494" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden inline-block px-6 py-2 rounded-full transition-all duration-300 hover:scale-[1.03]">
             <span className="absolute inset-0 bg-primary group-hover:bg-primary/90 transition-colors duration-300"></span>
             <span className="relative z-10 text-primary-foreground font-semibold">Contacto</span>
-          </button>
+          </a>
         </nav>
 
         {/* Mobile menu button */}
@@ -123,16 +123,18 @@ export function Navigation() {
             >
               Por qué elegirnos
             </motion.button>
-            <motion.button 
+            <motion.a
+              href="https://wa.me/5491157529494"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.25 }}
-              onClick={() => scrollToSection('contact')} 
-              className="group relative overflow-hidden px-6 py-3 rounded-full transition-all duration-300 hover:scale-[1.03] mt-4"
+              className="group relative overflow-hidden inline-block px-6 py-3 rounded-full transition-all duration-300 hover:scale-[1.03] mt-4"
             >
               <span className="absolute inset-0 bg-primary group-hover:bg-primary/90 transition-colors duration-300"></span>
               <span className="relative z-10 text-primary-foreground font-semibold">Contacto</span>
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
       )}

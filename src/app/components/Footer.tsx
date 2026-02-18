@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Linkedin, Instagram, Twitter } from 'lucide-react';
+import { Mail, Linkedin, Instagram, Phone } from 'lucide-react';
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -82,6 +82,12 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Contacto</h3>
             <ul className="space-y-3">
+              <li className="flex items-center gap-2 text-muted-foreground font-normal">
+                <Phone className="w-4 h-4 text-primary" />
+                <a href="https://wa.me/5491157529494" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors duration-300">
+                  +54 11 5752-9494
+                </a>
+              </li>
               <li className="flex items-center gap-2 text-muted-foreground font-normal">
                 <Mail className="w-4 h-4 text-primary" />
                 <a href="mailto:lucastudio.ba@gmail.com" className="hover:text-primary transition-colors duration-300">
