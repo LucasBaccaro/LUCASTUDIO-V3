@@ -23,6 +23,28 @@ export function Chatbot() {
         return await getChatKitSessionToken();
       },
     },
+    // Handler para la tool del agente: enviar email cuando el usuario deja sus datos
+    async onClientTool({ name, params }) {
+      if (name === 'enviar_notificacion_email') {
+        try {
+          const apiUrl = import.meta.env.PROD
+            ? '/api/send-email'
+            : 'http://localhost:3001/api/send-email';
+
+          await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(params),
+          });
+
+          console.log('Email de notificación enviado');
+        } catch (error) {
+          console.error('Error enviando email:', error);
+        }
+        return { success: true };
+      }
+      return { success: false, error: 'Tool no reconocida' };
+    },
     // Header customization
     header: {
       enabled: false, // Hide the entire header with conversation title
