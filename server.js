@@ -1,7 +1,9 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { Resend } from 'resend';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -61,6 +63,52 @@ app.post('/api/chatkit/session', async (req, res) => {
   } catch (error) {
     console.error('Error creating ChatKit session:', error);
     return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Endpoint para enviar email de notificación
+app.post('/api/send-email', async (req, res) => {
+  try {
+    const { nombre, email, empresa, descripcion } = req.body;
+
+    if (!nombre || !email || !descripcion) {
+      return res.status(400).json({ error: 'Faltan campos requeridos: nombre, email, descripcion' });
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    await resend.emails.send({
+      from: 'Luca Studio <onboarding@resend.dev>',
+      to: 'lucastudio.ba@gmail.com',
+      subject: `🚀 Nuevo contacto desde la web: ${nombre}`,
+      html: `
+        <h2>Nuevo mensaje desde la web de Luca Studio</h2>
+        <table style="border-collapse: collapse; width: 100%;">
+          <tr>
+            <td style="padding: 8px; font-weight: bold;">Nombre:</td>
+            <td style="padding: 8px;">${nombre}</td>
+          </tr>
+          <tr style="background: #f5f5f5;">
+            <td style="padding: 8px; font-weight: bold;">Email:</td>
+            <td style="padding: 8px;"><a href="mailto:${email}">${email}</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; font-weight: bold;">Empresa:</td>
+            <td style="padding: 8px;">${empresa || 'No indicó'}</td>
+          </tr>
+          <tr style="background: #f5f5f5;">
+            <td style="padding: 8px; font-weight: bold;">Descripción del proyecto:</td>
+            <td style="padding: 8px;">${descripcion}</td>
+          </tr>
+        </table>
+      `,
+    });
+
+    console.log('Email de notificación enviado para:', nombre);
+    return res.status(200).json({ success: true });
+  } catch (error) {
+    console.error('Error enviando email:', error);
+    return res.status(500).json({ error: 'Error al enviar el email' });
   }
 });
 
