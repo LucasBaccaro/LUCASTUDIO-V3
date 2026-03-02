@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Linkedin, Instagram, Phone } from 'lucide-react';
+import { Mail, Instagram, Phone } from 'lucide-react';
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -30,15 +30,6 @@ export function Footer() {
               Soluciones digitales a medida para impulsar tu negocio al siguiente nivel.
             </p>
             <div className="flex gap-4">
-              <a
-                href="https://www.linkedin.com/in/luca-studio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg border border-primary/30 text-primary hover:border-primary hover:bg-primary/10 transition-all duration-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
               <a
                 href="https://instagram.com/lucastudio.ba"
                 target="_blank"
