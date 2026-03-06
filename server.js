@@ -13,10 +13,14 @@ const __dirname = dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// CORS: solo necesario en dev (en prod el frontend se sirve desde el mismo server)
-const allowedOrigins = process.env.NODE_ENV === 'production'
-  ? []
-  : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000'];
+// CORS: dominios permitidos
+const allowedOrigins = [
+  'https://lucastudio.tech',
+  'https://www.lucastudio.tech',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'http://localhost:3000',
+];
 
 app.use(cors({
   origin(origin, callback) {
